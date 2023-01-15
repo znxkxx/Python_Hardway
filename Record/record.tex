@@ -1,0 +1,84 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 用于记录学习过程中的问题
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%设定纸张类型
+\documentclass[cs4size, punct, nospace, fancyhdr, fnter, hyperref, UTF8, twosides]{ctexart}
+%\documentclass[cs4size,  UTF8, hyperre]{ctexart}
+
+\usepackage{verbatim} %用于大段注释
+
+%设定页边距
+\usepackage[top=0.9cm,bottom=2.5cm,left=2cm,right=2cm,includehead,includefoot]{geometry}
+%超链接设置
+\usepackage[pdfstartview=FitH,
+CJKbookmarks=true,
+bookmarksnumbered=true,
+bookmarksopen=true,
+colorlinks =true, %注释掉此项则交叉引用为彩色边框
+pdfborder=001, %注释掉此项则交叉引用为彩色边框
+citecolor =blue,%
+linkcolor =blue
+]{hyperref}
+
+%图形和表的package设定
+\usepackage{graphicx}%图形包
+\DeclareGraphicsExtensions{.eps,.ps,.jpg}
+\graphicspath{{graphics/}}%设置图片路径为当前路径下的graphics文件夹
+\usepackage{wrapfig}%图文混排需要的包
+\usepackage{color}%颜色包
+%\usepackage{times}%Times New Roman字体包，将字体默认为TNR字体
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage[numbers, sort&compress]{natbib}
+\newcommand{\supercite}[1]{\textsuperscript{\cite{#1}}}
+
+%数学公式的包
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{latexsym}
+\usepackage{bm}
+%声明“定理”、“定义”、“公理”、“假定”、“证明”等
+%此处用法还没想好
+\theoremstyle{definition}
+\newtheorem{thm}{定理}
+\newtheorem{defn}{定义}
+\newtheorem{lem}{引理}
+\newtheorem{asum}{假定}
+\numberwithin{equation}{section}  %将公示编号修正为 section+equation
+
+%页眉页脚的设置
+\usepackage{fancyhdr}  % This should be set AFTER setting up the page geometry
+\pagestyle{fancy}
+\fancyhead{}  % clear all fields in head
+\fancyhead[RO,LE] {\heiti \bfseries Seminar记录}%奇数页的右边部分、偶数页的左边部分
+\fancyhead[LO,RE] { \heiti \bfseries \leftmark}%奇数页的左边部分、偶数页的右边部分
+\fancyfoot[CO,CE]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\setlength{\headsep}{20pt}
+
+
+\usepackage{booktabs}  %用于表格上下端粗线
+\usepackage{array} %用于控制宽表格
+\usepackage{amsmath}
+
+
+
+
+\begin{document}
+
+
+%封面信息，包括标题、作者、日期等
+\title{Python学习记录}
+\author{徐鑫\footnote{徐鑫，光华管理学院2015级金融学博士研究生。Email: xuxinfinance@pku.edu.cn。Tel: 131-2671-1711}}
+\date{2018-04}
+\maketitle
+%生成目录
+\tableofcontents
+\newpage
+
+
+\end{document}
